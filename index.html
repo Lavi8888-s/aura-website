@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aura Interiors</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <img src="C:\aura-interiors\assets\aura logo.jpg" alt="Aura Logo" class="logo" />
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Free Quote Button -->
+  <div class="quote-button-container">
+    <button id="openPopup">Get Free Quote</button>
+  </div>
+
+  <!-- Popup Form -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup">
+      <h3>Get Your Free Quote</h3>
+      <form id="quoteForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="text" id="address" placeholder="Your Address" required />
+        <select id="bhk" required>
+          <option value="">Select BHK Type</option>
+          <option value="1 BHK">1 BHK</option>
+          <option value="2 BHK">2 BHK</option>
+          <option value="3 BHK">3 BHK</option>
+        </select>
+        <input type="text" id="possession" placeholder="Possession Status" required />
+        <input type="tel" id="phone" placeholder="Phone Number" required />
+        <button type="submit">Send on WhatsApp</button>
+        <button type="button" id="closePopup">Close</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Home image row -->
+  <section class="image-row" id="gallery">
+  <div class="img-box"><img src="assets/interior%201.jpg" alt="Interior 1" /></div>
+  <div class="img-box"><img src="assets/interior%202.jpg" alt="Interior 2" /></div>
+  <div class="img-box"><img src="assets/interiro3.jpg" alt="Interior 3" /></div> <!-- Still has typo -->
+</section>
+
+  <!-- Typing Quote Section -->
+  <section class="quote-section">
+    <h2 id="typed-quote"></h2>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-overlay">
+      <div class="about-content">
+        <h2>About Aura Interiors</h2>
+        <p><strong>Our Story:</strong> <span style="color:#f4c430;">Aura Interiors</span> was founded with the vision of transforming ordinary spaces into extraordinary experiences. With over <span style="color: #f4c430;">18 years</span> of experience, we craft interiors that reflect elegance, functionality, and your personal style.</p>
+        <p><strong>Our Mission:</strong> To design interiors that reflect personality, purpose, and comfort using customized, high-quality solutions.</p>
+        <p><strong>Our Team:</strong> We are a group of passionate interior designers, craftsmen, and project managers committed to delivering excellence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="stats-section" id="stats">
+    <div class="stat-box">
+      <h2 id="happyClients">0</h2>
+      <p>Happy Clients</p>
+    </div>
+    <div class="stat-box">
+      <h2 id="projectsCompleted">0</h2>
+      <p>Projects Completed</p>
+    </div>
+    <div class="stat-box">
+      <h2 id="yearsExperience">0</h2>
+      <p>Years of Experience</p>
+    </div>
+  </section>
+
+  <!-- Full Gallery Section -->
+<section class="gallery-section" id="gallery">
+  <h2 class="gallery-title">Interior Gallery</h2>
+  <div class="gallery-grid">
+    <img src="C:\aura-interiors\assets\gallery1.jpeg" alt="Interior 1">
+    <img src="C:\aura-interiors\assets\gallery2.jpg" alt="Interior 2">
+    <img src="C:\aura-interiors\assets\gallery3.jpg" alt="Interior 3">
+    <img src="C:\aura-interiors\assets\gallery4.jpg" alt="Interior 4">
+    <img src="C:\aura-interiors\assets\gallery5.jpg" alt="Interior 5">
+    <img src="C:\aura-interiors\assets\gallery6.jpg" alt="Interior 6">
+    <img src="C:\aura-interiors\assets\gallery7.jpg" alt="Interior 7">
+    <img src="C:\aura-interiors\assets\gallery8.jpg" alt="Interior 8">
+    <img src="C:\aura-interiors\assets\gallery9.jpg" alt="Interior 9">
+    <img src="C:\aura-interiors\assets\gallery10.jpg" alt="Interior 10">
+    <img src="C:\aura-interiors\assets\gallery11.jpg" alt="Interior 11">
+    <img src="C:\aura-interiors\assets\gallery12.jpg" alt="Interior 12">
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <div class="contact-image">
+      <img src="C:\aura-interiors\assets\contact1.jpg" alt="Visit Us" />
+    </div>
+    <div class="contact-details">
+      <h2>Better yet, see us in person!</h2>
+      <p>We love our customers, so feel free to visit during normal business hours.</p>
+
+      <a href="https://wa.me/919408884242" target="_blank" class="whatsapp-button">WhatsApp Us!</a>
+
+      <div class="contact-info">
+        <h3>Aura Interiors</h3>
+        <p>Katraj Gangadham Road, Pune - 411048</p>
+        <p>Contact: +91 94088 84242</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="main-footer">
+  <p>&copy; 2025 Aura Interiors. All rights reserved.</p>
+</footer>
+
+
+  <!-- JavaScript -->
+  <script>
+    // Render styled quote once
+    const quote = 'Shaping interiors, Defining experiences';
+    const words = quote.split(" ");
+    const target = document.getElementById("typed-quote");
+
+    words.forEach((word) => {
+      const span = document.createElement("span");
+      if (word === "Shaping" || word === "Defining") {
+        span.style.color = "#f4c430";
+      }
+      span.textContent = word + " ";
+      target.appendChild(span);
+    });
+
+    // Popup form open/close
+    document.getElementById("openPopup").onclick = () => {
+      document.getElementById("popup").style.display = "flex";
+    };
+    document.getElementById("closePopup").onclick = () => {
+      document.getElementById("popup").style.display = "none";
+    };
+
+    // Form submission to WhatsApp
+    document.getElementById("quoteForm").onsubmit = function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const address = document.getElementById("address").value;
+      const bhk = document.getElementById("bhk").value;
+      const possession = document.getElementById("possession").value;
+      const phone = document.getElementById("phone").value;
+
+      const message = `Hello Aura Interiors,%0AName: ${name}%0AAddress: ${address}%0ABHK Type: ${bhk}%0APossession: ${possession}%0APhone: ${phone}`;
+      const whatsappURL = `https://wa.me/919408884242?text=${message}`;
+      window.open(whatsappURL, "_blank");
+
+      document.getElementById("popup").style.display = "none";
+    };
+
+    // Animated counters on scroll
+    function animateValue(id, start, end, duration) {
+      let obj = document.getElementById(id);
+      let range = end - start;
+      let current = start;
+      let increment = end > start ? 1 : -1;
+      let stepTime = Math.abs(Math.floor(duration / range));
+      let timer = setInterval(() => {
+        current += increment;
+        obj.textContent = current;
+        if (current === end) clearInterval(timer);
+      }, stepTime);
+    }
+
+    const statSection = document.getElementById("stats");
+    let statsStarted = false;
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !statsStarted) {
+        statsStarted = true;
+        animateValue("happyClients", 0, 500, 2000);
+        animateValue("projectsCompleted", 0, 200, 2000);
+        animateValue("yearsExperience", 0, 18, 2000);
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(statSection);
+  </script>
+</body>
+</html>

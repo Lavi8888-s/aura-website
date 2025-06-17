@@ -1,0 +1,392 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #081f49;
+  --accent: #f4c430;
+  --light-bg: #cce7f3;
+  --text-dark: #000;
+  --text-light: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+}
+
+/* Header with Logo and Navbar */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #081f49; /* navy blue background */
+  padding: 15px 30px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 130px;
+  height: auto;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.navbar a:hover {
+  color:#000000;
+  border-radius: 6px;
+}
+
+/* Image Row */
+.image-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.image-row img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-row img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.img-box {
+  flex: 1;
+  padding: 0 10px;
+  min-width: 250px;
+}
+
+.quote-section {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+#typed-quote {
+  font-size: 34px;
+  font-weight: bold;
+  color: var(--text-dark);
+  font-style: italic;
+}
+
+.quote-button-container {
+  text-align: center;
+  margin: 30px;
+}
+
+#openPopup {
+  padding: 12px 25px;
+  background-color: var(--accent);
+  color: var(--text-dark);
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#openPopup:hover,
+.popup button:hover {
+  background-color: #fdd835;
+  color: var(--text-dark);
+}
+
+#openPopup:focus,
+.popup button:focus {
+  outline: 2px solid var(--text-dark);
+  outline-offset: 2px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  animation: popupFade 0.3s ease-in-out;
+}
+
+@keyframes popupFade {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.popup input,
+.popup select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.popup button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: var(--primary);
+  color: var(--text-light);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.about-section {
+  background-image: url("assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 100px 20px;
+  color: var(--text-light);
+}
+
+.about-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-content h2 {
+  font-size: 36px;
+  color: var(--accent);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 60px 20px;
+  background-color: var(--primary);
+  color: var(--text-light);
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.stat-box h2 {
+  font-size: 48px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .navbar a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .image-row {
+    flex-direction: column;
+  }
+
+  .img-box {
+    padding: 10px 0;
+  }
+
+  #typed-quote {
+    font-size: 28px;
+  }
+
+  .about-content h2 {
+    font-size: 28px;
+  }
+
+  .stat-box h2 {
+    font-size: 36px;
+  }
+
+  .stat-box p {
+    font-size: 16px;
+  }
+}
+
+.gallery-section {
+  padding: 60px 20px;
+  background-color: #f4f8fc;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 36px;
+  color: #002366;
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+.contact-section {
+  padding: 60px 20px;
+  background-color: #e7f1f9;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.contact-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-details {
+  flex: 1;
+  min-width: 300px;
+  color: #002366;
+}
+
+.contact-details h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.contact-details p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+.contact-info h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+
+.main-footer {
+  background-color: #081f49;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 16px;
+}
